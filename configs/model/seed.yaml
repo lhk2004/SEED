@@ -1,0 +1,8 @@
+defaults:
+  - e2d2@_here_
+  - _self_
+
+_target_: src.denoiser.diffusion.SEED
+config:
+  _target_: src.denoiser.diffusion.SEEDConfig
+  decoder_loss_lambda: 1.0

@@ -1,0 +1,4 @@
+_target_: transformers.GenerationConfig
+do_sample: false
+temperature: 1.0
+use_cache: true

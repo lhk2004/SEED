@@ -1,0 +1,16 @@
+_target_: composer.utils.parallelism.ParallelismConfig
+fsdp:
+  sharding_strategy: "FULL_SHARD"
+  cpu_offload: false
+  mixed_precision: "DEFAULT"
+  backward_prefetch: "BACKWARD_POST"
+  activation_checkpointing: true
+  activation_cpu_offload: true
+  verbose: true
+  auto_wrap: true
+  sync_module_states: true
+  use_orig_params: true
+  state_dict_type: "full"
+  
+  # specify the sharding degree
+  data_parallel_shard_degree: 4

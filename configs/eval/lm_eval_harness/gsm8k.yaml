@@ -1,0 +1,7 @@
+defaults:
+  - base@_here_
+  - _self_
+
+tasks: 'gsm8k'
+model:
+  gen_kwargs: ${gen_kwargs}

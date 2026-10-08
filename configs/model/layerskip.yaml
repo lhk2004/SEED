@@ -1,0 +1,14 @@
+defaults:
+  - ar@_here_
+  - _self_
+
+_target_: src.denoiser.layerskip.LayerSkip
+config:
+  _target_: src.denoiser.layerskip.LayerSkipConfig
+  early_exit_loss_scale: 1.0
+  early_exit_scale: 1.0
+  early_exit_curriculum: rotational
+  early_exit_rotation_stride: 8
+  layer_dropout_max: 0.1
+  layer_dropout_time_schedule: constant
+  layer_dropout_total_steps: null

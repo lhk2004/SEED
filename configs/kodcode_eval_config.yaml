@@ -1,0 +1,37 @@
+#file: noinspection LongLine
+defaults:
+  - generation@generation_config: diffusion_generation_config
+  - generation/logits_processor@logits_processor_list: ???
+  - generation/stopping_criteria@stopping_criteria_list: ???
+  - tokenizer: autotokenizer
+  - _self_
+
+seed: 1234
+pretrained_model_name_or_path: ???
+pretrained_model_revision: null
+output_path: ???
+
+eos_token_id: ${get_tokenizer_eos_token_id:${tokenizer}}
+# Generation parameters
+block_size: null
+max_length: null
+max_new_tokens: null
+backend: ${set_backend:}
+gen_kwargs:
+  generation_config: ${generation_config}
+  logits_processor:
+    _target_: src.custom_transformers.generation.HydraCompatibleLogitsProcessorList
+    logits_processor_dict: ${logits_processor_list}
+  stopping_criteria:
+    _target_: src.custom_transformers.generation.HydraCompatibleStoppingCriteriaList
+    stopping_criteria_dict: ${stopping_criteria_list}
+  max_length: ${max_length}
+  max_new_tokens: ${max_new_tokens}
+
+# KodCode-specific settings
+ckpt_file: "best-rank0.pt"
+load_ema_weights: true
+kodcode_difficulty: null  # null = all, or "easy", "medium", "hard"
+kodcode_num_samples: null  # null = all, or limit to N problems
+kodcode_test_size: 1000    # last 1000 sampled samples are test, rest are train
+kodcode_sampling_seed: 42  # fixed seed for reproducible random sampling

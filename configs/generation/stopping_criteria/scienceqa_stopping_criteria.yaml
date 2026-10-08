@@ -1,0 +1,4 @@
+scienceqa_stopping_criteria:
+  _target_: src.custom_transformers.generation.RegexStoppingCriteria
+  tokenizer: ${tokenizer}
+  pattern: 'The answer is \([A-H]\)\.'

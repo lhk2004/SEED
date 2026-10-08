@@ -1,0 +1,8 @@
+SEED: Self-Speculative Decoding via Implicit Encoder-Decoder
+Copyright 2026 Hankun Lin, Patrick Pynadath, and Ruqi Zhang
+
+This product is derived from the E2D2 codebase
+(https://github.com/kuleshov-group/e2d2), Copyright 2024 Cornell University,
+licensed under the Apache License, Version 2.0. The original code has been
+modified and extended to implement SEED and the AR, E2D2, and LayerSkip
+baselines evaluated in the SEED paper.

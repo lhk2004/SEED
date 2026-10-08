@@ -1,0 +1,11 @@
+#file: noinspection LongLine
+_target_: src.datasets.tokenize_on_demand.KodCodeDataset
+split: "test"
+max_length: ${model.config.length}
+dataset_path: "KodCode/KodCode-V1-SFT-R1"
+difficulty: null
+padding: false
+add_special_tokens: true
+num_shot: 0
+test_size: 1000
+sampling_seed: 42
