@@ -98,7 +98,7 @@ in `CUDA_VISIBLE_DEVICES`:
 
 ```bash
 cd bash_scripts
-CUDA_VISIBLE_DEVICES=0,1,2,3 bash run_train_seed_gsm8k.sh
+CUDA_VISIBLE_DEVICES=0 bash run_train_seed_gsm8k.sh
 ```
 
 Each run writes to `outputs/<RUN_NAME>/` at the repo root, and the best checkpoint is
